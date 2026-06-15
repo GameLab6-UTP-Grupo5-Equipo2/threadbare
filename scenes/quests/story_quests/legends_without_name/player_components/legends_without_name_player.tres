@@ -312,6 +312,11 @@ animations = [{
 "name": &"caida",
 "speed": 10.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"creado_ja",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ipmm0")

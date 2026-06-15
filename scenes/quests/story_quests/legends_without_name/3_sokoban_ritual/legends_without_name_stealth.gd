@@ -4,7 +4,7 @@ extends Node2D
 @export var tile_size: int = 64 
 
 # NODOS DE LA ESCENA
-@onready var mapa_paredes: Node = $TileMapLayers
+@onready var mapa_paredes: Node = $TileMapLayers/Stone
 @onready var player_node: Node2D = $Jugador 
 @onready var contenedor_materiales: CharacterBody2D = $Materiales 
 
@@ -52,10 +52,10 @@ func _process(_delta: float) -> void:
 		return
 		
 	var dir: Vector2 = Vector2.ZERO
-	if Input.is_action_just_pressed("ui_up"): dir = Vector2.UP
-	elif Input.is_action_just_pressed("ui_down"): dir = Vector2.DOWN
-	elif Input.is_action_just_pressed("ui_left"): dir = Vector2.LEFT
-	elif Input.is_action_just_pressed("ui_right"): dir = Vector2.RIGHT
+	if Input.is_action_just_pressed("move_up"): dir = Vector2.UP
+	elif Input.is_action_just_pressed("move_down"): dir = Vector2.DOWN
+	elif Input.is_action_just_pressed("move_left"): dir = Vector2.LEFT
+	elif Input.is_action_just_pressed("move_right"): dir = Vector2.RIGHT
 	
 	if dir != Vector2.ZERO:
 		mover(dir)
@@ -212,12 +212,12 @@ func check_win() -> void:
 func actualizar_posiciones_visuales(animar: bool = false) -> void:
 	if animar:
 		var tween: Tween = get_tree().create_tween()
-		tween.tween_property(player_node, "position", player_pos * tile_size, 0.1)
+		tween.tween_property(player_node, "position", player_pos * tile_size + Vector2(tile_size, tile_size) * 0.5, 0.1)
 	else:
 		player_node.position = player_pos * tile_size
 		
 	for i: Dictionary in items:
-		var target_pos: Vector2 = i["pos"] * tile_size
+		var target_pos: Vector2 = i["pos"] * tile_size + Vector2(tile_size, tile_size) * 0.5
 		if animar:
 			var tween: Tween = get_tree().create_tween()
 			tween.tween_property(i["node"], "position", target_pos, 0.1)

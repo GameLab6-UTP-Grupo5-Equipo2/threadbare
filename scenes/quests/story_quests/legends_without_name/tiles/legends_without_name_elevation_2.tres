@@ -59,6 +59,9 @@ texture_region_size = Vector2i(64, 64)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hh45c"]
 polygon = PackedVector2Array(-32, 13.933472, 32, 14.479881, 32, 32, -32, 32)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_45eff"]
+polygon = PackedVector2Array(-32, -32, 32, -32, 30.872208, 81.14199, 14.479881, 89.33816, -15.572704, 90.43098, -33.60426, 79.50276)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_45eff"]
 texture = ExtResource("2_hh45c")
 texture_region_size = Vector2i(64, 64)
@@ -91,6 +94,7 @@ texture_region_size = Vector2i(64, 64)
 3:2/next_alternative_id = 2
 3:2/0 = 0
 3:2/0/texture_origin = Vector2i(0, -32)
+3:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_45eff")
 3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -15.2994995, -32, 14.753113, -32, 32, -32, 33.057854, 94.25585, 13.933472, 96.44149, -15.026295, 94.80227, -31.418617, 94.25585)
 3:2/1 = 1
 0:4/size_in_atlas = Vector2i(1, 2)

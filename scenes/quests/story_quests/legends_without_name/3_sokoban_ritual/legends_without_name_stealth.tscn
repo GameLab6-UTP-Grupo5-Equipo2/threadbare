@@ -61,6 +61,7 @@ tile_set = ExtResource("4_ms0hn")
 [node name="Jugador" parent="." unique_id=1079296690 instance=ExtResource("5_r8wse")]
 z_index = 2
 position = Vector2(2017, 1003)
+mode = 2
 sprite_frames = ExtResource("6_imt2g")
 
 [node name="Camera2D" type="Camera2D" parent="Jugador" unique_id=1196891219]
